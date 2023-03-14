@@ -1,8 +1,5 @@
 FROM python:3.9-slim
 
-ARG PROJECT_DIR=projects/dashboard
-ARG LIB_DIR=lib
-
 # Create user to avoid running as root
 RUN useradd --create-home app
 
@@ -10,7 +7,7 @@ ENV POETRY_HOME="/opt/poetry" \
     POETRY_VIRTUALENVS_CREATE=false \
     POETRY_VIRTUALENVS_IN_PROJECT=false \
     POETRY_NO_INTERACTION=1 \
-    POETRY_VERSION=1.2.2
+    POETRY_VERSION=1.4.0
 
 # Update pip
 RUN pip install --upgrade pip
